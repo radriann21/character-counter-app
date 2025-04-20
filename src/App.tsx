@@ -1,34 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Container } from "@chakra-ui/react"
+import { Navigation } from "@/components/Navigation/Navigation"
+import { TextInputContainer } from "@/components/TextInput/TextInputContainer"
+import { LetterDensityComponent } from "./components/LetterDensity/LetterDensityComponent"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Box
+      as="main"
+      maxW="100%"
+      minH="100vh"
+      bgColor={{ base: "#FAFAFA", _dark: "#13151B" }}
+      color={{ base: "#000000", _dark: "#F9FAFB" }}
+    >
+      <Container as="section" maxW="6xl" py="2rem">
+        <Navigation />
+        <TextInputContainer />
+        <LetterDensityComponent />
+      </Container>
+    </Box>
   )
 }
 
